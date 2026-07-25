@@ -82,20 +82,21 @@
             z-index: 1000; 
         }
         
-        /* IMAGE LOGO STYLES (With White Background Removal Trick) */
+        /* IMAGE LOGO STYLES (Original Colors + App Icon Style) */
         nav .logo-img {
-            height: 65px; 
+            height: 55px; 
             width: auto;
             cursor: pointer;
             transition: all 0.3s ease;
             user-select: none;
-            /* Magic trick to make JPG white background transparent on dark theme */
-            filter: invert(1) hue-rotate(180deg) brightness(1.2) contrast(1.2);
-            mix-blend-mode: screen;
+            background: #ffffff; /* Gives it a clean white base */
+            border-radius: 8px; /* Rounded corners like an app icon */
+            padding: 4px; /* Slight spacing around the logo */
+            box-shadow: 0 0 10px rgba(0, 246, 255, 0.15); /* Subtle cyan glow */
         }
         nav .logo-img:hover {
             transform: scale(1.05);
-            filter: invert(1) hue-rotate(180deg) brightness(1.4) contrast(1.3);
+            box-shadow: 0 0 15px rgba(0, 246, 255, 0.4);
         }
         
         nav ul { list-style: none; display: flex; gap: 8px; align-items: center; flex-wrap: wrap; justify-content: center; } 
@@ -331,7 +332,7 @@
 
         @media (max-width: 600px) {
             nav { padding: 12px 5%; gap: 10px; }
-            nav .logo-img { height: 50px; margin-bottom: 5px; } 
+            nav .logo-img { height: 45px; margin-bottom: 5px; } 
             nav ul li a { padding: 6px 10px; font-size: 0.8rem; } 
             
             #home { padding-top: 210px; padding-bottom: 40px; } 
@@ -372,7 +373,6 @@
 </head>
 <body oncontextmenu="return false;">
 <nav>
-<!-- Replaced text logo with image logo and transparent magic CSS -->
 <img src="hextags_logo_8K.jpg" class="logo-img" onclick="window.scrollTo({ top: 0, behavior: 'smooth' });" alt="HexTags Logo" title="Go to Home">
 
 <ul>
