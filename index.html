@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
 <meta charset="utf-8"/>
@@ -190,6 +189,62 @@
         .stat-box h3 { font-size: clamp(1.8rem, 4vw, 2.2rem); color: #00f6ff; margin-bottom: 5px; font-weight: 800; }
         .stat-box span { color: #f8fafc; font-weight: 500; font-size: 0.9rem; text-transform: uppercase; }
 
+        /* Contact Form Styles (NEWLY ADDED) */
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin-top: 25px;
+            text-align: left;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .contact-form label {
+            color: #cbd5e1;
+            font-size: 0.9rem;
+            margin-bottom: -5px;
+        }
+        .contact-form input, .contact-form textarea {
+            width: 100%;
+            padding: 12px 15px;
+            background: rgba(10, 15, 25, 0.5);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 8px;
+            color: #ffffff;
+            font-family: 'Poppins-Regular', sans-serif;
+            font-size: 0.95rem;
+            transition: all 0.3s ease;
+        }
+        .contact-form input:focus, .contact-form textarea:focus {
+            outline: none;
+            border-color: #00f6ff;
+            box-shadow: 0 0 8px rgba(0, 246, 255, 0.3);
+        }
+        .contact-form input[type="file"] {
+            padding: 10px;
+            background: rgba(0, 246, 255, 0.05);
+            border: 1px dashed rgba(0, 246, 255, 0.4);
+            cursor: pointer;
+        }
+        .contact-form button {
+            background: #00f6ff;
+            color: #080c13;
+            border: none;
+            padding: 12px 20px;
+            font-size: 1rem;
+            font-family: 'Poppins-SemiBold', sans-serif;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-top: 10px;
+        }
+        .contact-form button:hover {
+            background: #00c2cc;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(0, 246, 255, 0.4);
+        }
+
         /* FOOTER (Compact and Sleek) */
         footer {
             padding: 20px 15px 15px; 
@@ -210,8 +265,8 @@
             body::before, body::after { width: 400px; height: 400px; filter: blur(100px); }
             nav { flex-direction: column; padding: 15px 5%; gap: 12px; }
             nav ul { gap: 8px; justify-content: center; }
-            #home { padding-top: 200px; } /* Increased top padding for mobile to clear tall stacked navbar */
-            section { scroll-margin-top: 140px; } /* Ensures clicking a link doesn't hide section title under tall nav */
+            #home { padding-top: 200px; } 
+            section { scroll-margin-top: 140px; } 
         }
 
         @media (max-width: 600px) {
@@ -219,7 +274,7 @@
             nav .logo { margin-bottom: 5px; }
             nav ul li a { padding: 6px 10px; font-size: 0.8rem; } 
             
-            #home { padding-top: 210px; padding-bottom: 40px; } /* Ensure hero title is fully visible on small screens */
+            #home { padding-top: 210px; padding-bottom: 40px; } 
             section { padding: 80px 5% 40px; scroll-margin-top: 160px; }
             
             .single-glass-container { padding: 25px 15px; }
@@ -405,8 +460,30 @@
 <section id="contact">
 <h2 class="section-title">Get In <span>Touch</span></h2>
 <div class="single-glass-container">
-<p>Ready to start your next big project? Contact us today to discuss your ideas.</p>
+<p>Ready to start your next big project or looking to join our team? Contact us today to discuss your ideas or send us your resume.</p>
 <h3 style="color: #00f6ff; font-size: clamp(1.1rem, 3vw, 1.4rem); margin-top: 15px; word-break: break-all;">📧 hextagstechnologies@gmail.com</h3>
+
+<!-- NEWLY ADDED CONTACT & RESUME FORM -->
+<form action="https://formsubmit.co/hextagstechnologies@gmail.com" method="POST" enctype="multipart/form-data" class="contact-form">
+    <!-- Honeypot (prevents spam) -->
+    <input type="hidden" name="_captcha" value="false">
+    <input type="hidden" name="_next" value="https://hextags.com/">
+
+    <label for="name">Full Name</label>
+    <input type="text" id="name" name="name" required placeholder="Enter your full name">
+
+    <label for="email">Email Address</label>
+    <input type="email" id="email" name="email" required placeholder="Enter your email address">
+
+    <label for="message">Message / Cover Letter</label>
+    <textarea id="message" name="message" rows="4" required placeholder="Tell us about yourself or your project"></textarea>
+
+    <label for="resume">Upload Resume / Document (Optional)</label>
+    <input type="file" id="resume" name="attachment" accept=".pdf,.doc,.docx">
+
+    <button type="submit">Submit Details</button>
+</form>
+
 </div>
 </section>
 <section id="privacy">
