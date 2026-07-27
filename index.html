@@ -748,7 +748,7 @@
         // ==========================================
 
 
-        // Smooth scrolling and offset adjustments + URL Update Fix
+        // Smooth scrolling and offset adjustments + URL Update on Click
         document.querySelectorAll('nav a').forEach(anchor => {
             anchor.addEventListener('click', function(e) {
                 if(this.getAttribute('href').startsWith('#')) {
@@ -765,14 +765,16 @@
                             behavior: 'smooth'
                         });
 
-                        // Yeh line aapke URL bar mein section ka naam (jaise #services) add karegi
+                        // URL update on click
                         history.pushState(null, null, targetId);
                     }
                 }
             });
         });
 
-        // Scroll Spy (Highlight active nav item)
+        // Scroll Spy (Highlight active nav item) + URL Update on Scroll
+        let lastSection = ''; // Naya variable URL ko track karne ke liye
+        
         window.addEventListener('scroll', () => {
             const sections = document.querySelectorAll('section');
             const navLinks = document.querySelectorAll('nav ul li a');
@@ -788,12 +790,19 @@
                 }
             });
 
+            // Menu link ki class active karna
             navLinks.forEach(link => {
                 link.classList.remove('active');
                 if (link.getAttribute('href') === `#${currentSection}`) {
                     link.classList.add('active');
                 }
             });
+
+            // NAYA CODE: Scroll karne par URL update karna bina history bhare
+            if (currentSection && currentSection !== lastSection) {
+                lastSection = currentSection;
+                history.replaceState(null, null, `#${currentSection}`);
+            }
         });
 
         // Security / Prevention
