@@ -748,7 +748,7 @@
         // ==========================================
 
 
-        // Smooth scrolling and offset adjustments
+        // Smooth scrolling and offset adjustments + URL Update Fix
         document.querySelectorAll('nav a').forEach(anchor => {
             anchor.addEventListener('click', function(e) {
                 if(this.getAttribute('href').startsWith('#')) {
@@ -764,6 +764,9 @@
                             top: targetSection.offsetTop - offset, 
                             behavior: 'smooth'
                         });
+
+                        // Yeh line aapke URL bar mein section ka naam (jaise #services) add karegi
+                        history.pushState(null, null, targetId);
                     }
                 }
             });
