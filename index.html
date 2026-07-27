@@ -84,7 +84,7 @@
         
         /* IMAGE LOGO STYLES (Big Size & Clear) */
         nav .logo-img {
-            height: 90px; /* Bada size taaki saaf dikhe */
+            height: 90px; 
             width: auto;
             cursor: pointer;
             transition: all 0.3s ease;
@@ -157,6 +157,7 @@
             backdrop-filter: blur(25px); -webkit-backdrop-filter: blur(25px);
             border: 1px solid rgba(255, 255, 255, 0.05); border-top: 1px solid rgba(255, 255, 255, 0.15); border-left: 1px solid rgba(255, 255, 255, 0.15);
             border-radius: 12px; padding: 30px 25px; transition: 0.3s; text-align: left;
+            display: flex; flex-direction: column;
         }
 
         .glass-card-item:hover {
@@ -166,11 +167,11 @@
         }
         
         .article-date { color: #94a3b8; font-size: 0.85rem; margin-bottom: 8px; font-weight: 500; font-family: 'Poppins-Regular', sans-serif; }
-        .read-more { display: inline-block; margin-top: 15px; color: #00f6ff; text-decoration: none; font-size: 0.9rem; font-weight: 600; transition: 0.3s; }
+        .read-more { display: inline-block; margin-top: auto; padding-top: 15px; color: #00f6ff; text-decoration: none; font-size: 0.9rem; font-weight: 600; transition: 0.3s; cursor: pointer; }
         .read-more:hover { color: #ffffff; text-shadow: 0 0 10px rgba(0, 246, 255, 0.6); transform: translateX(5px); }
 
         .glass-card-item h3 { color: #00f6ff; font-size: 1.2rem; margin-bottom: 12px; font-weight: 700; }
-        .glass-card-item p { color: #cbd5e1; font-size: 0.95rem; line-height: 1.6; }
+        .glass-card-item p { color: #cbd5e1; font-size: 0.95rem; line-height: 1.6; margin-bottom: 10px; }
 
         /* Tech Stack Badges */
         .tech-stack-container { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; margin-top: 15px; }
@@ -256,13 +257,13 @@
             box-shadow: 0 4px 15px rgba(0, 246, 255, 0.4);
         }
 
-        /* Success Popup Styles */
+        /* Popup Overlays */
         .popup-overlay {
             position: fixed;
             top: 0; left: 0; width: 100%; height: 100%;
             background: rgba(8, 12, 19, 0.85);
             backdrop-filter: blur(8px);
-            display: none; /* Hidden by default */
+            display: none; 
             justify-content: center;
             align-items: center;
             z-index: 9999;
@@ -278,22 +279,77 @@
             width: 90%;
             animation: floatOrb1 0.5s ease-out forwards;
             animation-name: popupAnim;
+            position: relative;
         }
+        
+        /* Specific Article Popup Styles */
+        .article-popup {
+            max-width: 800px;
+            max-height: 85vh;
+            overflow-y: auto;
+            text-align: left;
+            padding: 40px 35px;
+        }
+        /* Custom Scrollbar for Article Modal */
+        .article-popup::-webkit-scrollbar { width: 6px; }
+        .article-popup::-webkit-scrollbar-track { background: rgba(10, 15, 25, 0.5); border-radius: 10px; }
+        .article-popup::-webkit-scrollbar-thumb { background: #00f6ff; border-radius: 10px; }
+        
+        .close-modal-btn {
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            background: transparent;
+            border: none;
+            color: #00f6ff;
+            font-size: 2rem;
+            cursor: pointer;
+            transition: 0.3s;
+            line-height: 1;
+            padding: 0;
+        }
+        .close-modal-btn:hover {
+            color: #ffffff;
+            transform: scale(1.2);
+        }
+        
+        .article-modal-body h3 {
+            font-size: clamp(1.5rem, 3vw, 2rem);
+            color: #00f6ff;
+            margin-bottom: 5px;
+        }
+        .article-modal-body .modal-date {
+            color: #94a3b8;
+            font-size: 0.9rem;
+            margin-bottom: 20px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            padding-bottom: 15px;
+            font-family: 'Poppins-Regular', sans-serif;
+        }
+        .article-modal-body p {
+            color: #cbd5e1;
+            font-size: 1rem;
+            line-height: 1.8;
+            margin-bottom: 15px;
+        }
+
         @keyframes popupAnim {
             0% { transform: scale(0.8); opacity: 0; }
             100% { transform: scale(1); opacity: 1; }
         }
-        .popup-content h3 {
+        
+        /* Success Popup Fixes */
+        .popup-content h3.success-title {
             color: #00f6ff;
             font-size: 1.8rem;
             margin-bottom: 15px;
         }
-        .popup-content p {
+        .popup-content p.success-desc {
             color: #cbd5e1;
             margin-bottom: 25px;
             font-size: 1rem;
         }
-        .popup-content button {
+        .popup-content button.success-btn {
             background: #00f6ff;
             color: #080c13;
             border: none;
@@ -304,7 +360,7 @@
             cursor: pointer;
             transition: 0.3s;
         }
-        .popup-content button:hover {
+        .popup-content button.success-btn:hover {
             background: #00c2cc;
             box-shadow: 0 0 15px rgba(0, 246, 255, 0.5);
         }
@@ -345,6 +401,7 @@
             .card-grid { grid-template-columns: 1fr; gap: 15px; }
             .about-stats { gap: 15px; }
             .stat-box { min-width: 100%; padding: 15px; }
+            .article-popup { padding: 30px 20px; }
         }
     </style>
 
@@ -399,7 +456,7 @@
 </div>
 </section>
 
-<!-- NAYA TECHNOLOGY ARTICLES SECTION SHURU (Added as requested) -->
+<!-- TECHNOLOGY ARTICLES SECTION -->
 <section id="articles">
 <h2 class="section-title">Technology <span>Articles</span></h2>
 <div class="card-grid">
@@ -408,25 +465,25 @@
 <div class="article-date">July 27, 2026</div>
 <h3>The Future of Generative AI</h3>
 <p>Explore how Large Language Models are reshaping software development and automating complex workflows in modern businesses.</p>
-<a href="#" class="read-more">Read Full Article &rarr;</a>
+<!-- Changed href aur added onclick event -->
+<a href="javascript:void(0);" onclick="openArticle('article1')" class="read-more">Read Full Article &rarr;</a>
 </div>
 <!-- Article 2 -->
 <div class="glass-card-item">
 <div class="article-date">July 24, 2026</div>
 <h3>Why Flutter Dominates in 2026</h3>
 <p>An in-depth look at Flutter's performance improvements and why it remains the top choice for cross-platform applications.</p>
-<a href="#" class="read-more">Read Full Article &rarr;</a>
+<a href="javascript:void(0);" onclick="openArticle('article2')" class="read-more">Read Full Article &rarr;</a>
 </div>
 <!-- Article 3 -->
 <div class="glass-card-item">
 <div class="article-date">July 20, 2026</div>
 <h3>Building Secure REST APIs</h3>
 <p>Best practices for securing your Node.js backend against modern cyber threats, data breaches, and vulnerabilities.</p>
-<a href="#" class="read-more">Read Full Article &rarr;</a>
+<a href="javascript:void(0);" onclick="openArticle('article3')" class="read-more">Read Full Article &rarr;</a>
 </div>
 </div>
 </section>
-<!-- NAYA SECTION KHATAM -->
 
 <section id="services">
 <h2 class="section-title">Our <span>Services</span></h2>
@@ -604,23 +661,92 @@
 <p class="footer-copyright">© 2026 <span>HexTags Technologies</span>. All Rights Reserved.</p>
 </footer>
 
-<!-- Success Popup -->
+<!-- Success Form Popup -->
 <div id="successPopup" class="popup-overlay">
     <div class="popup-content">
-        <h3>Success!</h3>
-        <p>Your details have been submitted successfully. We will get back to you soon.</p>
-        <button onclick="closePopup()">OK</button>
+        <h3 class="success-title">Success!</h3>
+        <p class="success-desc">Your details have been submitted successfully. We will get back to you soon.</p>
+        <button class="success-btn" onclick="closePopup()">OK</button>
+    </div>
+</div>
+
+<!-- NAYA ARTICLE MODAL POPUP -->
+<div id="articleModal" class="popup-overlay">
+    <div class="popup-content article-popup">
+        <button class="close-modal-btn" onclick="closeArticle()">&times;</button>
+        <div id="articleContentArea" class="article-modal-body">
+            <!-- Data yahan JavaScript se aayega -->
+        </div>
     </div>
 </div>
 
 <script>
-        // Function to close popup and reset form
+        // Form Success Popup Logic
         function closePopup() {
             document.getElementById('successPopup').style.display = 'none';
             document.getElementById('contactForm').reset();
             submitted = false;
             document.getElementById('submitBtn').innerText = 'Submit Details';
         }
+
+        // ==========================================
+        // ARTICLES DATA & MODAL LOGIC
+        // ==========================================
+        const articlesData = {
+            'article1': {
+                title: 'The Future of Generative AI',
+                date: 'July 27, 2026',
+                content: '<p>Generative AI and Large Language Models (LLMs) like GPT, Gemini, and Claude are fundamentally changing how we approach software development. By automating repetitive coding tasks, generating boilerplate code, and assisting in complex debugging, these tools allow developers to focus on higher-level architecture and business logic.</p><p>Moreover, modern businesses are integrating AI-driven workflows to streamline customer support, content creation, and data analysis. The future lies in customized AI models tailored to specific enterprise data, ensuring privacy, security, and high accuracy. At HexTags Technologies, we are at the forefront of building these intelligent applications to keep our clients ahead of the curve.</p>'
+            },
+            'article2': {
+                title: 'Why Flutter Dominates in 2026',
+                date: 'July 24, 2026',
+                content: '<p>Flutter continues to reign supreme in the cross-platform development space. With recent engine upgrades and enhanced rendering capabilities through Impeller, Flutter applications now offer near-native performance that is indistinguishable from apps written purely in Swift or Kotlin.</p><p>The ability to maintain a single codebase for Android, iOS, Web, and Desktop significantly reduces development time and costs. Its rich ecosystem of pre-built widgets, combined with deep hardware integration capabilities, makes it the ideal choice for startups and enterprises alike. Our team extensively utilizes Flutter to deliver visually stunning and highly responsive applications.</p>'
+            },
+            'article3': {
+                title: 'Building Secure REST APIs',
+                date: 'July 20, 2026',
+                content: '<p>In an era of increasing cyber threats, securing your backend infrastructure is non-negotiable. Building a secure REST API with Node.js involves multiple layers of defense. It starts with implementing robust authentication and authorization using JWT or OAuth2, ensuring that only authenticated users can access sensitive endpoints.</p><p>Furthermore, developers must actively prevent common vulnerabilities such as SQL Injection, XSS, and CSRF. Implementing rate limiting, CORS policies, and strict input validation are essential practices. Always serve APIs over HTTPS and keep dependencies updated to patch known vulnerabilities quickly.</p>'
+            }
+        };
+
+        function openArticle(articleId) {
+            const modal = document.getElementById('articleModal');
+            const contentArea = document.getElementById('articleContentArea');
+            const data = articlesData[articleId];
+            
+            // Insert specific article data
+            contentArea.innerHTML = `
+                <h3>${data.title}</h3>
+                <div class="modal-date">${data.date}</div>
+                ${data.content}
+            `;
+            
+            // Show modal & prevent background scrolling
+            modal.style.display = 'flex';
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeArticle() {
+            document.getElementById('articleModal').style.display = 'none';
+            // Restore background scrolling
+            document.body.style.overflow = 'auto';
+        }
+
+        // Close Popups when clicking outside the box
+        window.onclick = function(event) {
+            const successOverlay = document.getElementById('successPopup');
+            const articleOverlay = document.getElementById('articleModal');
+            
+            if (event.target == successOverlay) {
+                closePopup();
+            }
+            if (event.target == articleOverlay) {
+                closeArticle();
+            }
+        }
+        // ==========================================
+
 
         // Smooth scrolling and offset adjustments
         document.querySelectorAll('nav a').forEach(anchor => {
