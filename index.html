@@ -365,6 +365,21 @@
             box-shadow: 0 0 15px rgba(0, 246, 255, 0.5);
         }
 
+        /* FOOTER (Compact and Sleek) */
+        footer {
+            padding: 20px 15px 15px; 
+            background: rgba(10, 15, 25, 0.95); 
+            border-top: 1px solid rgba(0, 246, 255, 0.15); 
+            text-align: center; 
+            margin-top: auto; 
+            width: 100%;
+        }
+        footer h3 { color: #ffffff; margin-bottom: 5px; font-size: 1.1rem; }
+        footer p { color: #94a3b8; margin-bottom: 2px; font-size: 0.85rem; }
+        footer .footer-email { color: #00f6ff; margin-bottom: 10px; font-weight: 500; font-size: 0.9rem; }
+        footer .footer-copyright { color: #64748b; font-size: 0.8rem; margin-top: 8px; border-top: 1px solid rgba(255,255,255,0.05); padding-top: 10px; }
+        footer .footer-copyright span { color: #00f6ff; font-weight: 600; }
+
         /* NEW SOCIAL MEDIA SECTION CSS */
         .social-section {
             display: flex;
@@ -397,21 +412,6 @@
             box-shadow: 0 5px 15px rgba(0, 246, 255, 0.4);
             border-color: #00f6ff;
         }
-
-        /* FOOTER (Compact and Sleek) */
-        footer {
-            padding: 20px 15px 15px; 
-            background: rgba(10, 15, 25, 0.95); 
-            border-top: 1px solid rgba(0, 246, 255, 0.15); 
-            text-align: center; 
-            margin-top: auto; 
-            width: 100%;
-        }
-        footer h3 { color: #ffffff; margin-bottom: 5px; font-size: 1.1rem; }
-        footer p { color: #94a3b8; margin-bottom: 2px; font-size: 0.85rem; }
-        footer .footer-email { color: #00f6ff; margin-bottom: 10px; font-weight: 500; font-size: 0.9rem; }
-        footer .footer-copyright { color: #64748b; font-size: 0.8rem; margin-top: 8px; border-top: 1px solid rgba(255,255,255,0.05); padding-top: 10px; }
-        footer .footer-copyright span { color: #00f6ff; font-weight: 600; }
 
         /* Mobile Specific Overrides */
         @media (max-width: 900px) {
@@ -456,6 +456,7 @@
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"Organization","name":"HexTags Technologies","url":"https://hextags.com/","logo":"https://hextags.com/hextags_logo_8K.jpg","email":"hr@hextags.com","address":{"@type":"PostalAddress","addressLocality":"Mohali","addressRegion":"Punjab","addressCountry":"IN"}}
 </script>
+<!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-VLEQQNPBC3"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
@@ -490,21 +491,26 @@
 </div>
 </section>
 
+<!-- TECHNOLOGY ARTICLES SECTION -->
 <section id="articles">
 <h2 class="section-title">Technology <span>Articles</span></h2>
 <div class="card-grid">
+<!-- Article 1 -->
 <div class="glass-card-item">
 <div class="article-date">July 27, 2026</div>
 <h3>The Future of Generative AI</h3>
 <p>Explore how Large Language Models are reshaping software development and automating complex workflows in modern businesses.</p>
+<!-- Changed href aur added onclick event -->
 <a href="javascript:void(0);" onclick="openArticle('article1')" class="read-more">Read Full Article &rarr;</a>
 </div>
+<!-- Article 2 -->
 <div class="glass-card-item">
 <div class="article-date">July 24, 2026</div>
 <h3>Why Flutter Dominates in 2026</h3>
 <p>An in-depth look at Flutter's performance improvements and why it remains the top choice for cross-platform applications.</p>
 <a href="javascript:void(0);" onclick="openArticle('article2')" class="read-more">Read Full Article &rarr;</a>
 </div>
+<!-- Article 3 -->
 <div class="glass-card-item">
 <div class="article-date">July 20, 2026</div>
 <h3>Building Secure REST APIs</h3>
@@ -644,10 +650,13 @@
 <div class="single-glass-container">
 <p>Ready to start your next big project or looking to join our team? Contact us today to discuss your ideas or send us your resume.</p>
 
+<!-- Hidden iframe to prevent page reload on submit -->
 <script>var submitted = false;</script>
 <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;" onload="if(submitted) { document.getElementById('successPopup').style.display = 'flex'; }"></iframe>
 
+<!-- Form Submit pointing to hidden iframe -->
 <form id="contactForm" action="https://formsubmit.co/hr@hextags.com" method="POST" enctype="multipart/form-data" class="contact-form" target="hidden_iframe" onsubmit="submitted=true; document.getElementById('submitBtn').innerText='Sending...';">
+    <!-- Honeypot (prevents spam) -->
     <input type="hidden" name="_captcha" value="false">
 
     <label for="name">Full Name</label>
@@ -679,28 +688,32 @@
 <p>By accessing our website, you are agreeing to be bound by these terms of service, all applicable laws and regulations, and agree that you are responsible for compliance with any applicable local laws.</p>
 </div>
 </section>
-
 <footer>
-    <h3>HexTags Technologies</h3>
-    <p>MSME (UDYAM) Registered</p>
-    <p>Mohali, Punjab, India</p>
-    <p class="footer-email">Email: hr@hextags.com</p>
+<h3>HexTags Technologies</h3>
+<p>MSME (UDYAM) Registered</p>
+<p>Mohali, Punjab, India</p>
+<p class="footer-email">Email: hr@hextags.com</p>
 
-    <div class="social-section">
-        <a href="#" target="_blank" class="social-icon" title="LinkedIn">
-            <svg viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
-        </a>
-        <a href="#" target="_blank" class="social-icon" title="Instagram">
-            <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
-        </a>
-        <a href="#" target="_blank" class="social-icon" title="Facebook">
-            <svg viewBox="0 0 24 24"><path d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z"/></svg>
-        </a>
-    </div>
+<!-- NEW SOCIAL MEDIA SECTION -->
+<div class="social-section">
+    <!-- LinkedIn Icon -->
+    <a href="#" target="_blank" class="social-icon" title="LinkedIn">
+        <svg viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+    </a>
+    <!-- Instagram Icon -->
+    <a href="#" target="_blank" class="social-icon" title="Instagram">
+        <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+    </a>
+    <!-- Facebook Icon -->
+    <a href="#" target="_blank" class="social-icon" title="Facebook">
+        <svg viewBox="0 0 24 24"><path d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z"/></svg>
+    </a>
+</div>
 
-    <p class="footer-copyright">© 2026 <span>HexTags Technologies</span>. All Rights Reserved.</p>
+<p class="footer-copyright">© 2026 <span>HexTags Technologies</span>. All Rights Reserved.</p>
 </footer>
 
+<!-- Success Form Popup -->
 <div id="successPopup" class="popup-overlay">
     <div class="popup-content">
         <h3 class="success-title">Success!</h3>
@@ -709,11 +722,13 @@
     </div>
 </div>
 
+<!-- NAYA ARTICLE MODAL POPUP -->
 <div id="articleModal" class="popup-overlay">
     <div class="popup-content article-popup">
         <button class="close-modal-btn" onclick="closeArticle()">&times;</button>
         <div id="articleContentArea" class="article-modal-body">
-            </div>
+            <!-- Data yahan JavaScript se aayega -->
+        </div>
     </div>
 </div>
 
@@ -733,37 +748,122 @@
             'article1': {
                 title: 'The Future of Generative AI',
                 date: 'July 27, 2026',
-                content: '<p>Generative AI and Large Language Models (LLMs) like GPT, Gemini, and Claude are fundamentally changing how we approach software development. By automating repetitive coding tasks, generating boilerplate code, and assisting in complex debugging, these tools allow developers to focus on creative problem solving and system architecture.</p>'
+                content: '<p>Generative AI and Large Language Models (LLMs) like GPT, Gemini, and Claude are fundamentally changing how we approach software development. By automating repetitive coding tasks, generating boilerplate code, and assisting in complex debugging, these tools allow developers to focus on higher-level architecture and business logic.</p><p>Moreover, modern businesses are integrating AI-driven workflows to streamline customer support, content creation, and data analysis. The future lies in customized AI models tailored to specific enterprise data, ensuring privacy, security, and high accuracy. At HexTags Technologies, we are at the forefront of building these intelligent applications to keep our clients ahead of the curve.</p>'
             },
             'article2': {
                 title: 'Why Flutter Dominates in 2026',
                 date: 'July 24, 2026',
-                content: '<p>Flutter continues to lead the cross-platform development space by offering unprecedented performance and a highly customizable UI toolkit. With recent updates, compiling to Web, iOS, and Android from a single codebase has never been smoother or more efficient.</p>'
+                content: '<p>Flutter continues to reign supreme in the cross-platform development space. With recent engine upgrades and enhanced rendering capabilities through Impeller, Flutter applications now offer near-native performance that is indistinguishable from apps written purely in Swift or Kotlin.</p><p>The ability to maintain a single codebase for Android, iOS, Web, and Desktop significantly reduces development time and costs. Its rich ecosystem of pre-built widgets, combined with deep hardware integration capabilities, makes it the ideal choice for startups and enterprises alike. Our team extensively utilizes Flutter to deliver visually stunning and highly responsive applications.</p>'
             },
             'article3': {
                 title: 'Building Secure REST APIs',
                 date: 'July 20, 2026',
-                content: '<p>Security is no longer an afterthought. Implementing robust authentication like JWT, proper rate limiting, input validation, and secure headers are vital steps every backend developer must take to protect user data from modern cyber threats.</p>'
+                content: '<p>In an era of increasing cyber threats, securing your backend infrastructure is non-negotiable. Building a secure REST API with Node.js involves multiple layers of defense. It starts with implementing robust authentication and authorization using JWT or OAuth2, ensuring that only authenticated users can access sensitive endpoints.</p><p>Furthermore, developers must actively prevent common vulnerabilities such as SQL Injection, XSS, and CSRF. Implementing rate limiting, CORS policies, and strict input validation are essential practices. Always serve APIs over HTTPS and keep dependencies updated to patch known vulnerabilities quickly.</p>'
             }
         };
 
-        // Modal Open Logic
-        function openArticle(id) {
-            const article = articlesData[id];
-            if (article) {
-                document.getElementById('articleContentArea').innerHTML = `
-                    <h3>${article.title}</h3>
-                    <div class="modal-date">${article.date}</div>
-                    ${article.content}
-                `;
-                document.getElementById('articleModal').style.display = 'flex';
-            }
+        function openArticle(articleId) {
+            const modal = document.getElementById('articleModal');
+            const contentArea = document.getElementById('articleContentArea');
+            const data = articlesData[articleId];
+            
+            // Insert specific article data
+            contentArea.innerHTML = `
+                <h3>${data.title}</h3>
+                <div class="modal-date">${data.date}</div>
+                ${data.content}
+            `;
+            
+            // Show modal & prevent background scrolling
+            modal.style.display = 'flex';
+            document.body.style.overflow = 'hidden';
         }
 
-        // Modal Close Logic
         function closeArticle() {
             document.getElementById('articleModal').style.display = 'none';
+            // Restore background scrolling
+            document.body.style.overflow = 'auto';
         }
+
+        // Close Popups when clicking outside the box
+        window.onclick = function(event) {
+            const successOverlay = document.getElementById('successPopup');
+            const articleOverlay = document.getElementById('articleModal');
+            
+            if (event.target == successOverlay) {
+                closePopup();
+            }
+            if (event.target == articleOverlay) {
+                closeArticle();
+            }
+        }
+        // ==========================================
+
+
+        // Smooth scrolling and offset adjustments + URL Update on Click
+        document.querySelectorAll('nav a').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                if(this.getAttribute('href').startsWith('#')) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    const targetSection = document.querySelector(targetId);
+                    
+                    // Check if mobile view (window width < 900px)
+                    const offset = window.innerWidth <= 900 ? 140 : 70;
+                    
+                    if(targetSection) {
+                        window.scrollTo({
+                            top: targetSection.offsetTop - offset, 
+                            behavior: 'smooth'
+                        });
+
+                        // URL update on click
+                        history.pushState(null, null, targetId);
+                    }
+                }
+            });
+        });
+
+        // Scroll Spy (Highlight active nav item) + URL Update on Scroll
+        let lastSection = ''; // Naya variable URL ko track karne ke liye
+        
+        window.addEventListener('scroll', () => {
+            const sections = document.querySelectorAll('section');
+            const navLinks = document.querySelectorAll('nav ul li a');
+            let currentSection = '';
+            
+            // Adjust hit detection area for mobile vs desktop
+            const offsetDetect = window.innerWidth <= 900 ? 160 : 100;
+
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                if (pageYOffset >= (sectionTop - offsetDetect)) {
+                    currentSection = section.getAttribute('id');
+                }
+            });
+
+            // Menu link ki class active karna
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === `#${currentSection}`) {
+                    link.classList.add('active');
+                }
+            });
+
+            // NAYA CODE: Scroll karne par URL update karna bina history bhare
+            if (currentSection && currentSection !== lastSection) {
+                lastSection = currentSection;
+                history.replaceState(null, null, `#${currentSection}`);
+            }
+        });
+
+        // Security / Prevention
+        document.addEventListener('contextmenu', event => event.preventDefault());
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'F12' || (e.ctrlKey && e.shiftKey && (e.key === 'I' || e.key === 'C' || e.key === 'J')) || (e.ctrlKey && e.key.toLowerCase() === 'u')) { 
+                e.preventDefault(); 
+            }
+        });
 </script>
 </body>
 </html>
